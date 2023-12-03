@@ -12,12 +12,6 @@ dict_spelled_digits = {
 }
 result = 0
 
-test = """nineltnphnvhpvrxbfc1
-tcvmnphpmthree56rx
-99rsvrmxbgxtjtclnbbmb8sixone3
-sevenvfjzctwoqjqmvjrdxpxzsfour5
-3d2nhtrhbtfourgsml"""
-
 with open("input.txt", "r") as file:
     for line in file:
         first_n = None
@@ -30,7 +24,9 @@ with open("input.txt", "r") as file:
             
             else:
                 for spelled_digit in dict_spelled_digits:
+                    # if there is enough space for a letter to be spelled
                     if len(line) - i_carac >= len(spelled_digit):
+                        # if the substring of the size of that letter is equal to our spelled letter
                         if line[i_carac:i_carac + len(spelled_digit)] == spelled_digit:
                             last_n = dict_spelled_digits[spelled_digit]
                             if first_n is None:
