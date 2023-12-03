@@ -16,12 +16,14 @@ with open("input.txt", "r") as file:
     for line in file:
         first_n = None
         last_n = None
+        # PART 1
         for i_carac in range(len(line)):
             if line[i_carac] in digits:
                 last_n = line[i_carac]
                 if first_n is None:
                     first_n = line[i_carac]
             
+            # PART 2
             else:
                 for spelled_digit in dict_spelled_digits:
                     # if there is enough space for a letter to be spelled
