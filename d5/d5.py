@@ -1,5 +1,3 @@
-result = 0
-
 seed_destination_map = {}
 current_map = []
 
@@ -49,4 +47,5 @@ with open("input.txt", "r") as file:
                 seed_destination_map[k_seed] = dest_range_start + (seed_destination_map[k_seed] - source_range_start)
                 break
 
+# we only take the minimum of the results
 print(min(seed_destination_map.values()))
